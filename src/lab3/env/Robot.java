@@ -14,8 +14,7 @@ public class Robot {
 
     public void setPos(Pos pos) {
 
-        if (pos.x < 0 || pos.x >= map.getWidth() ||
-            pos.y < 0 || pos.y >= map.getHeight())
+        if (!map.isInsideMap(pos))
         {
             throw new IllegalArgumentException("Coordinates out of bounds");
         }

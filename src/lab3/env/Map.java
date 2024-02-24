@@ -42,6 +42,10 @@ public class Map {
         return map[pos.y][pos.x];
     }
 
+    public boolean isInsideMap(Pos pos) {
+        return pos.x >= 0 && pos.x < getWidth() && pos.y >= 0 && pos.y < getHeight();
+    }
+
     public int getHeight() {
         return height;
     }
