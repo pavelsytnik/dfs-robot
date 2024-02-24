@@ -47,6 +47,8 @@ public class DeepFirstSearch {
         for (var c : cells) {
             if (!(visited.contains(c) || map.isWall(c))) {
                 search(c);
+                if (flagFound)
+                    return;
                 update(pos);
             }
         }
