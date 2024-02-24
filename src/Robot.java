@@ -1,33 +1,29 @@
 public class Robot {
 
     private final Map map;
-    private int x, y;
+    private Pos pos;
 
-    public Robot(Map map, int x, int y) {
+    public Robot(Map map, Pos pos) {
         this.map = map;
-        setPos(x, y);
+        setPos(pos);
     }
 
-    public void setPos(int x, int y) {
+    public void setPos(Pos pos) {
 
-        if (x < 0 || x >= map.getWidth() ||
-            y < 0 || y >= map.getHeight())
+        if (pos.x < 0 || pos.x >= map.getWidth() ||
+            pos.y < 0 || pos.y >= map.getHeight())
         {
             throw new IllegalArgumentException("Coordinates out of bounds");
         }
 
-        if (map.isWall(x, y))
+        if (map.isWall(pos))
             throw new IllegalArgumentException("Try to set robot to wall");
 
-        this.x = x;
-        this.y = y;
+        this.pos = pos;
     }
 
-    public int getX() {
-        return x;
+    public Pos getPos() {
+        return pos;
     }
 
-    public int getY() {
-        return y;
-    }
 }

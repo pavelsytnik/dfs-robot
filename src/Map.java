@@ -34,8 +34,8 @@ public class Map {
         }
     }
 
-    public boolean isWall(int x, int y) {
-        return map[y][x];
+    public boolean isWall(Pos pos) {
+        return map[pos.y][pos.x];
     }
 
     public int getHeight() {
