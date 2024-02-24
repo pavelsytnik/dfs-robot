@@ -27,6 +27,14 @@ public class Pos {
     }
 
     @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + x;
+        result = 31 * result + y;
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
