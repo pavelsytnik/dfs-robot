@@ -1,6 +1,8 @@
 package lab3.env;
 
 import java.io.*;
+import java.util.List;
+import java.util.ArrayList;
 
 import lab3.util.Pos;
 
@@ -52,5 +54,21 @@ public class Map {
 
     public int getWidth() {
         return width;
+    }
+
+    public List<Pos> getAdjacentCells(Pos pos) {
+        var cells = new ArrayList<Pos>();
+        Pos[] neighbors = {
+                new Pos(pos.x - 1, pos.y),
+                new Pos(pos.x, pos.y - 1),
+                new Pos(pos.x + 1, pos.y),
+                new Pos(pos.x, pos.y + 1),
+        };
+        for (var n : neighbors) {
+            if (isInsideMap(n)) {
+                cells.add(n);
+            }
+        }
+        return cells;
     }
 }
