@@ -1,4 +1,8 @@
+package lab3.env;
+
 import java.io.*;
+
+import lab3.util.Pos;
 
 public class Map {
 

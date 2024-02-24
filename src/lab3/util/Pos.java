@@ -1,3 +1,5 @@
+package lab3.util;
+
 public class Pos {
 
     public final int x;

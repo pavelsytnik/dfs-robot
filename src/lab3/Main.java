@@ -1,3 +1,9 @@
+package lab3;
+
+import lab3.util.Pos;
+import lab3.env.Map;
+import lab3.env.Robot;
+
 public class Main {
     public static void main(String[] args) {
         var map = new Map("res/map");

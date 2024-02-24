@@ -1,3 +1,7 @@
+package lab3.env;
+
+import lab3.util.Pos;
+
 public class Robot {
 
     private final Map map;
