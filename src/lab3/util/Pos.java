@@ -38,4 +38,20 @@ public class Pos {
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
+
+    public Pos left() {
+        return new Pos(x - 1, y);
+    }
+
+    public Pos right() {
+        return new Pos(x + 1, y);
+    }
+
+    public Pos up() {
+        return new Pos(x, y - 1);
+    }
+
+    public Pos down() {
+        return new Pos(x, y + 1);
+    }
 }
