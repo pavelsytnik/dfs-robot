@@ -11,7 +11,7 @@ import lab3.node.*;
 
 public class Automaton {
     public static void execute(Robot robot, lab3.env.Map map, Flag flag) throws IOException {
-        var fr = new FileReader("res/example_input_file.txt");
+        var fr = new FileReader("res/path_finder.txt");
         var parser = new Parser(fr);
 
         var token = parser.nextToken();
