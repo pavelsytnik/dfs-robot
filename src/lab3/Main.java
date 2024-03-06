@@ -12,7 +12,10 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        var map = new Map("res/maze");
+        System.out.print("Choose the map: ");
+        int mapNumber = scan.nextInt();
+        var map = new Map("res/map" + mapNumber);
+
         System.out.println("Map[" + map.getWidth() + "," + map.getHeight() + "]:\n");
         map.print();
         System.out.println();
