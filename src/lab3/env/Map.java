@@ -71,4 +71,18 @@ public class Map {
         }
         return cells;
     }
+
+    public void print() {
+        for (int y = 0; y < this.getHeight(); y++) {
+            for (int x = 0; x < this.getWidth(); x++) {
+                var p = new Pos(x, y);
+                if (this.isWall(p)) {
+                    System.out.print("# ");
+                }else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
 }
