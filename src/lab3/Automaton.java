@@ -93,6 +93,10 @@ public class Automaton {
         var syntaxAnalyzer = new SyntaxAnalyzer();
         Node currentNode = syntaxAnalyzer.createNodes(list);
 
+        delay(300);
+        System.out.println("\n");
+        printMap();
+
         boolean flagFound = false;
 
         while (true) {
@@ -104,6 +108,8 @@ public class Automaton {
                 if (cn.getIndex() == 'e') {
                     if (!stack.isEmpty()) {
                         moveRobotBack();
+                    } else {
+                        break;
                     }
                 } else {
                     move(cn.getIndex());
@@ -116,7 +122,6 @@ public class Automaton {
                 delay(300);
                 System.out.println("\n");
                 printMap();
-                //System.out.println("\n");
             } else if (currentNode instanceof ConditionNode cn) {
                 if (cn.getIndex() == 'e') {
                     currentNode = flagFound ? cn.getTrueNode() : cn.getFalseNode();
@@ -127,7 +132,7 @@ public class Automaton {
                 break;
             }
         }
-        System.out.println("End of loop");
+        System.out.println("\nEnd of loop");
     }
 
     private void printMap() {
